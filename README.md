@@ -19,7 +19,7 @@ Nosso principal desafio será entender quem é cada usuário e o que ele pode fa
 
 - [URL Repositório](https://github.com/Kenzie-Academy-Brasil-Developers/m2-projeto-frotend-empresas-toledomg)
 
-- [URL Pages](https://literate-parakeet-334938d9.pages.github.io)
+- [URL Pages](https://friendly-goggles-a97d9e14.pages.github.io/)
 
 - [URL API](https://github.com/Jardel-Kenzie/m2-api-empresas)
 
