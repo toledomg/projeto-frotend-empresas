@@ -1,0 +1,26 @@
+body,
+header,
+main,
+a,
+img,
+div,
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+figure,
+figcaption,
+img,
+form,
+label,
+span,
+p,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
