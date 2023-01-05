@@ -19,6 +19,18 @@
   --color-black: #000000;
   --color-red: #ce4646;
   --color-green: #4ba036;
+  /*  */
+  --brand100: #364fc7;
+  --brand200: #3b56d9;
+  --gray100: #212529;
+  --gray200: #343a40;
+  --gray300: #495057;
+  --gray400: #868e96;
+  --gray500: #adb5bd;
+  --gray600: #e9ecef;
+  --gray700: #f1f3f5;
+  --gray800: #f8f9fa;
+  --gray900: #fcfeff;
 }
 
 body {
@@ -28,6 +40,10 @@ body {
 hr {
   width: 100vw;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.flex {
+  display: flex;
 }
 /* Tipografia Global */
 
@@ -43,6 +59,10 @@ hr {
 
 .color-1 {
   color: var(--color-white100);
+}
+
+.color-2 {
+  color: var(--gray500);
 }
 
 .title-1 {
@@ -85,4 +105,13 @@ hr {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
+}
+
+.text-5--input {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: start;
 }

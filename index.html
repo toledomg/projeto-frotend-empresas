@@ -15,6 +15,10 @@
   <link rel="stylesheet" href="./src/styles/globalStyles.css">
   <!-- <link rel="stylesheet" href="./src/styles/reset.css"> -->
 
+  <!-- CSS iCON Google -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
   <!-- Toastify -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
@@ -26,41 +30,65 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Projeto Início -->
-  <title>M2-Kenzie Empresa</title>
+  <title>M2-Home</title>
 </head>
 
 <body>
   <header class="">
-    <div class="logo">
-      <img src="./src/pages/img/ellipse1.svg" alt="">
-      <h1 class="title-1">Kenzie Empresa</h1>
+    <div>
+      <div class="logo__container">
+        <div class="logo">
+          <img src="./src/pages/img/ellipse1.svg" alt="">
+          <h1 class="title-1">Kenzie Empresa</h1>
+        </div>
+        <i id="menu" class="material-symbols-outlined menu">menu</i>
+      </div>
+      <nav id="menu__login" class="menu__login">
+        <button class="btn--login button__1 text-1">
+          <a href="./src/pages/login.html">
+            Login</a></button>
+        <button class="btn--cadastro button__2 text-1 color-1">
+          <a href="./src/pages/cadastro.html">
+            Cadastro</a></button>
+      </nav>
     </div>
-    <nav class="menu__login">
-      <button class="btn--login button__1 text-1">Login</button>
-      <button class="btn--cadastro button__2 text-1 color-1">Cadastro</button>
-    </nav>
   </header>
   <hr>
   <main>
     <section class="home__container">
       <div class="home__left ">
-        <img class="object-cover object-right-bottom hover:object-top" src="./src/pages/img/office_bg.jpg"
-          alt="imagem-home">
+        <img class="object-cover object-right-bottom" src="./src/pages/img/office_bg.jpg" alt="imagem-home">
       </div>
       <!--  -->
       <div class="home__right">
         <header class="home_right--header">
-          <div class="home__right--title text-2">
-            <h1>Selecionar Setor</h1>
-          </div>
-          <div class="home__right--menu">
-            <img src="./src/pages/img/seta.svg" alt="seta-menu-bar">
-          </div>
+          <select class="text-2" name="" id="setor">
+            <option value="pt" selected>Selecionar Setor</option>
+            <option value="rh">RH</option>
+            <option value="ti">TI</option>
+            <option value="almoxarifado">ALMOXARIFADO</option>
+          </select>
         </header>
-        <section class="home__right--info">
-          <h1 class="text-3">Empresa nome</h1>
-          <span class="text-4">10 horas</span>
-          <button class="btn_setor_bussiness text-4">Setor</button>
+        <section class="home__hight container__info">
+
+          <div class="home__right--info">
+            <h1 class="text-3">Empresa 1</h1>
+            <span class="text-4">10 horas</span>
+            <button class="btn_setor_bussiness text-4">Setor</button>
+          </div>
+
+          <div class="home__right--info">
+            <h1 class="text-3">Empresa 2</h1>
+            <span class="text-4">12 horas</span>
+            <button class="btn_setor_bussiness text-4">Setor</button>
+          </div>
+
+          <div class="home__right--info">
+            <h1 class="text-3">Empresa 3</h1>
+            <span class="text-4">15 horas</span>
+            <button class="btn_setor_bussiness text-4">Setor</button>
+          </div>
+
         </section>
       </div>
     </section>

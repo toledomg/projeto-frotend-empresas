@@ -1,6 +1,19 @@
 header {
-  width: 80%;
-  max-width: 600px;
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  /* margin: 0 auto;
+  padding: 10px; */
+
+  /* background-color: var(--color-white100); */
+}
+
+header > div {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -8,6 +21,25 @@ header {
 
   margin: 0 auto;
   padding: 10px;
+}
+
+header > select {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  color: var(--color-white100);
+  background-color: var(--color-blue);
+  outline: none;
+}
+
+.logo__container {
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -21,9 +53,24 @@ header {
   gap: 16px;
 }
 
-.menu__login {
-  display: flex;
+i#menu {
+  cursor: pointer;
 
+  display: flex;
+}
+
+i#menu:hover {
+  background-color: #00000010;
+
+  border-radius: 10px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 40;
+}
+
+.menu__login {
+  display: none;
   gap: 16px;
 }
 /**/
@@ -32,7 +79,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   padding: 16px;
   gap: 40px;
@@ -44,6 +91,7 @@ header {
   height: 743px;
 
   display: flex;
+  display: none;
 }
 
 .home__left > img {
@@ -56,8 +104,10 @@ header {
 /* home right */
 .home__right {
   position: relative;
-  width: 550px;
-  height: 743px;
+  width: 100%;
+  /* width: 550px; */
+  height: auto;
+  min-height: 332px;
 
   display: flex;
   flex-direction: column;
@@ -98,9 +148,8 @@ header {
 }
 
 .home__right--info {
-  box-sizing: border-box;
-  width: 90%;
-  height: 135px;
+  min-width: 241px;
+  height: 215px;
 
   display: flex;
   justify-content: center;
@@ -111,6 +160,16 @@ header {
 
   border-bottom: 2px solid #4200ff50;
 
+  margin-bottom: 20px;
   padding: 20px;
-  gap: 15px;
+  gap: 30px;
+}
+
+.container__info {
+  width: 90%;
+  display: flex;
+
+  gap: 10px;
+
+  overflow-x: scroll;
 }
