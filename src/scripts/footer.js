@@ -32,3 +32,14 @@ export function renderFooter() {
 }
 
 // renderFooter();
+export function data() {
+  // <p>Copyright &copy; <span id="ano"></span> </p>
+  // const copyright = document.createElement("p");
+  // copyright.innerText = "Copyright &copy; ";
+  // const span = document.createElement("span");
+  // span.id = "ano";
+
+  // função em si para pegar ano
+  const ano = document.getElementById("ano");
+  ano.textContent = new Date().getFullYear();
+}

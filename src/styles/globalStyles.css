@@ -5,6 +5,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 /* font Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* font Noto Sans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*  */
 
 /*  */
 .container {
@@ -31,7 +34,18 @@
   --gray700: #f1f3f5;
   --gray800: #f8f9fa;
   --gray900: #fcfeff;
+
+  --font-inter: "Inter", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+
+  --font-modal: "Inter var,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,"Helvetica Neue",Arial,
+  "Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
+
+
 
 body {
   font-family: "Inter, sans-serif";
@@ -45,17 +59,15 @@ hr {
 .flex {
   display: flex;
 }
-/* Tipografia Global */
+
+.cursorText {
+  cursor: text;
+}
 
 .font--inter {
   font-family: "Inter", sans-serif;
 }
-.font--roboto {
-  font-family: "Roboto", sans-serif;
-}
-.font--poppins {
-  font-family: "Poppins", sans-serif;
-}
+/* Tipografia Global */
 
 .color-1 {
   color: var(--color-white100);
@@ -65,25 +77,45 @@ hr {
   color: var(--gray500);
 }
 
+.color-3 {
+  color: var(--color-green);
+}
+
+.color-4 {
+  color: var(--color-red);
+}
+
+.color-5 {
+  color: var(--color-blue);
+}
+
 .title-1 {
-  font-family: "Roboto";
+  font-family: var(--font-roboto);
   font-style: normal;
   font-weight: 900;
   font-size: 22px;
   line-height: 21px;
   text-align: center;
 }
+
+.title-2 {
+  font-family: var(--font-poppins);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 54px;
+}
+
 .text-1 {
-  font-family: "Roboto";
+  font-family: var(--font-roboto);
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 21px;
-  text-align: center;
 }
 
 .text-2 {
-  font-family: "Poppins";
+  font-family: var(--font-poppins);
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -92,7 +124,7 @@ hr {
 }
 
 .text-3 {
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -100,18 +132,64 @@ hr {
 }
 
 .text-4 {
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
 }
 
+.text-5 {
+  font-family: var(--font-poppins);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.text-5--modals {
+  font-family: var(--font-inter);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 21px;
+}
+
 .text-5--input {
-  font-family: "Poppins";
+  font-family: var(--font-poppins);
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
   text-align: start;
 }
+
+/* forms */
+
+.gap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.size-100 {
+  width: 100%;
+}
+
+.text__align--R {
+  display: flex;
+  text-align: right;
+}
+
+.espacamento-40 {
+  line-height: 40px;
+}
+
+.overModal {
+  background-color: #00000020;
+}
+
+.margin40 {
+  margin-top: 40px;
+}
+/*  */

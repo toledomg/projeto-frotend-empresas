@@ -8,12 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSS -->
-
+  <link rel="stylesheet" href="../styles/modals.css">
   <link rel="stylesheet" href="../styles/buttons.css">
-  <link rel="stylesheet" href="../styles/toast.css">
   <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="../styles/user.css">
+  <!-- <link rel="stylesheet" href="../styles/cadastro.css"> -->
   <link rel="stylesheet" href="../styles/login.css">
-  <link rel="stylesheet" href="../styles/cadastro.css">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/media.css">
   <link rel="stylesheet" href="../styles/globalStyles.css">
@@ -26,14 +26,15 @@
   <!-- Toastify -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
   <!-- Js -->
-  <script type="module" src="../scripts/login.js"></script>
+  <script type="module" src="../scripts/index.js"></script>
+  <script type="module" src="../scripts/modalPerfil.js"></script>
   <script type="module" src="../scripts/global.js"></script>
 
   <!-- JS - TailWind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Projeto Início -->
-  <title>M2-Login</title>
+  <title>M2-Usuário</title>
 </head>
 
 <body>
@@ -43,50 +44,43 @@
         <div class="logo">
           <img src="../pages/img/ellipse1.svg" alt="">
           <h1 class="title-1">
-            <a href="./home/index.html">
+            <a href="../../index.html">
               Kenzie Empresa</a>
           </h1>
         </div>
         <i id="menu" class="material-symbols-outlined menu">menu</i>
       </div>
       <nav id="menu__login" class="menu__login">
-        <button class="btn--login button__1 text-1"><a href="../../index.html">
-            Home</a></button>
-        <button class="btn--cadastro button__2 text-1 color-1">
-          <a href="../pages/cadastro.html">
-            Cadastro</a></button>
+        <button class="btn--login button__1 text-1">Logout</button>
       </nav>
     </div>
   </header>
   <hr>
   <main>
-    <section class="cadastro__container">
-      <h1 class="">Login</h1>
-      <span class="text-4">Preencha os campos para realizar login</span>
-      <form class="box__formulario">
+    <section class="perfil__container">
 
-        <label hidden class="box1--email text-1" for="usuario">Email</label>
-        <input class="box1--input text-5--input" placeholder="Digite seu email aqui" id="email" type="text"
-          required="true" name=email>
+      <div>
+        <h1 class="text-1">USERNAME</h1>
+        <a>
+          <img id="editBtn" src="./img/edit_black.svg" alt="btn-edit">
+        </a>
+      </div>
 
-
-
-        <label hidden class="box1--senha text-1" for="senha">Senha</label>
-        <input class="box1--input text-5--input" placeholder="Digite sua senha aqui" id="password" type="text"
-          required="true" name=password>
-
-
-        <div class="btn__login">
-
-          <button id="btnLogin" class="btn--cadastro button__2 text-1 color-1">Login</button>
-          <span class="text-2">ou</span>
-          <button class="btn--login button__1 text-1">
-            <a href="./cadastro.html">Cadastre-se</a></button>
-        </div>
-
-      </form>
+      <div>
+        <h2>Email: meuemail@mail.com</p>
+          <h2>Pleno</p>
+            <h2>Home Office</p>
+      </div>
     </section>
 
+    <section class="contratado__container">
+      <div>
+        <h1 class="title-1">Você ainda não foi contratado</h1>
+      </div>
+    </section>
+
+    <!-- Modal Editar Perfil User -->
+    <dialog id="editPerfil"></dialog>
   </main>
   <footer id="footer" class="color-2"></footer>
 </body>

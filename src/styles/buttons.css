@@ -43,14 +43,23 @@
   border: 1px solid var(--color-red);
 }
 
+.button__5 {
+  box-sizing: border-box;
+
+  width: 142px;
+  height: 41px;
+
+  background-color: var(--color-blue);
+}
+
 .btn_setor_bussiness {
   box-sizing: border-box;
-  width: 93px;
+  min-width: 93px;
   height: 32px;
 
   color: var(--color-blue);
   border: 1px solid var(--color-blue);
   border-radius: 255px;
 
-  padding: 5px;
+  padding: 0 15px;
 }

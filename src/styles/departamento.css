@@ -1,0 +1,126 @@
+.depart__container > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 40px 0 0 0;
+  padding: 20px;
+
+  gap: 20px;
+}
+
+.depart__container select {
+  width: 282px;
+  border: 1px solid var(--gray400);
+  border-radius: 15px;
+  padding: 5px 20px;
+
+  background-color: var(--color-white100);
+  outline: none;
+}
+
+.depart__container button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+  padding: 20px;
+}
+
+.depart__container button > img {
+  width: 15px;
+  height: auto;
+}
+
+.empresa__container {
+  width: 90%;
+  height: 340px;
+
+  background: var(--gray800);
+
+  margin: 0 auto;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.empresa__atuais > ul {
+  width: 320px;
+  min-width: 320px;
+  max-width: 440px;
+
+  max-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 20px auto;
+  gap: 16px;
+
+  overflow-y: auto;
+}
+
+/* Style ScrollBar - Barra de rolagem */
+.empresa__atuais > ul::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.empresa__atuais > ul::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 100px;
+}
+
+.empresa__atuais > ul::-webkit-scrollbar-thumb {
+  background-color: #4200ff;
+  border-radius: 100px;
+}
+.empresa__atuais > ul::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/*  */
+
+.empresa__atuais > ul > li {
+  width: 310px;
+  min-width: 300px;
+  height: 196px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+
+  background-color: var(--color-white100);
+}
+
+.depart__info--desc {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  padding: 10px;
+  gap: 10px;
+}
+
+.depart__info--edit {
+  width: 40px;
+  display: flex;
+  flex-direction: unset;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+  gap: 20px;
+}

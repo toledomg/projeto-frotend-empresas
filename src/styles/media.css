@@ -9,6 +9,7 @@
 
   .home__right {
     width: 550px;
+    max-height: 740px;
   }
 
   .cadastro__container {
@@ -20,15 +21,122 @@
     margin: 0 auto;
     margin-top: 80px;
   }
+
+  .contratado__container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .contratado__container1 {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .perfil__container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .depart__container > div {
+    flex-direction: inherit;
+    justify-content: space-around;
+  }
+
+  .empresa__atuais > ul {
+    width: 440px;
+  }
+
+  .empresa__atuais > ul > li {
+    width: 390px;
+  }
+
+  /* modals */
+  .size__modal {
+    max-width: 53rem;
+    min-height: 39rem;
+    margin: 1rem;
+  }
+
+  .info {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 50px;
+  }
+
+  .selector {
+    align-items: flex-end;
+  }
 }
 
+/*  */
 @media screen and (min-width: 1023px) {
   header > div {
-    width: 90%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 900px;
+
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
   }
+  .empresa__atuais > ul {
+    display: block;
+    width: 900px;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: inherit;
+    justify-content: space-around;
+    align-items: center;
+
+    /* align-items: center; */
+  }
+
+  .logo__container {
+    width: 50%;
+    max-width: 800px;
+  }
+
+  i#menu {
+    display: none;
+  }
+
+  .menu__login {
+    display: block;
+  }
+
+  .home__left {
+    max-width: 400px;
+    display: flex;
+  }
+  .home__right {
+    max-width: 400px;
+    display: flex;
+  }
+
+  /* modals */
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 50px;
+  }
+
+  .selector {
+    align-items: flex-end;
+  }
+  /*  */
 }
 
 @media screen and (min-width: 1201px) {
@@ -51,6 +159,46 @@
 
   .menu__login {
     display: block;
+  }
+
+  .home__left {
+    max-width: 550px;
+    display: flex;
+  }
+  .home__right {
+    max-width: 550px;
+    display: flex;
+  }
+
+  .contratado__container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .contratado__container1 {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .perfil__container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .depart__container > header {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .empresa__container {
+    max-width: 1140px;
+    margin: 0 auto;
   }
 }
 

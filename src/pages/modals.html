@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../src/styles/buttons.css">
+  <link rel="stylesheet" href="../src/styles/modals.css">
+  <link rel="stylesheet" href="../src/styles/footer.css">
+  <link rel="stylesheet" href="../src/styles/login.css">
+  <link rel="stylesheet" href="../src/styles/index.css">
+  <link rel="stylesheet" href="../src/styles/media.css">
+  <link rel="stylesheet" href="../src/styles/globalStyles.css">
+  <!-- <link rel="stylesheet" href="../src/styles/reset.css"> -->
+
+  <!-- CSS iCON Google -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- Toastify -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <!-- Js -->
+  <script type="module" src="../src/scripts/index.js"></script>
+  <!-- <script type="module" src="../scripts/footer.js"></script> -->
+
+  <!-- JS - TailWind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Projeto Início -->
+  <title>M2-Modals</title>
+</head>
+
+<body>
+
+
+
+  <!--  -->
+  <!--  -->
+  <!-- Modal tailwind (CRIAR DEPARTAMENTO)-->
+  <!--  -->
+
+
+
+
+  <!-- Modal tailwind (Deletar Usuário)-->
+  <!--  -->
+  <dialog>
+    <div>
+      <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+
+            <div
+              class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6 font--inter">
+
+
+
+              <div class="flex__delete__user">
+                <p>
+                <h1 class="title-1 espacamento-40">Realmente deseja remover o usuário ${nome}?</h1>
+                </p>
+
+                <button class="btn--cadastro button__3 text-1 color-1 size-100">Deletar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </dialog>
+
+
+
+</body>
+
+</html>
