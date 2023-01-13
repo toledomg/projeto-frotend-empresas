@@ -214,7 +214,7 @@ export function editDepartModal() {
           class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6 font--inter">
 
           <div id="closeEditDepart" class="modal-close">
-            <img src="./img/close.svg" alt="">
+            <img src="../../pages/img/close.svg" alt="">
           </div>
 
           <div class="title-1 text__align--R">Editar Departamento</div>
@@ -277,7 +277,7 @@ export function delDepartModal() {
         class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6 font--inter">
 
         <div id="closeDelDepart" class="modal-close">
-          <img src="./img/close.svg" alt="">
+          <img src="../../pages/img/close.svg" alt="">
         </div>
 
         <div class="flex__delete__user">
@@ -327,7 +327,7 @@ export function closeDelDepartModal() {
 //
 //
 
-export function criarUserModal() {
+export function editUserModal() {
   const editUser = document.querySelector("#editUser");
 
   editUser.innerHTML = `
@@ -342,25 +342,25 @@ export function criarUserModal() {
                 class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6 font--inter">
 
                 <div id="closeEditUser" class="modal-close">
-                  <img src="./img/close.svg" alt="">
+                  <img src="../../pages/img/close.svg" alt="">
                 </div>
 
                 <div class="title-1 text__align--R">Editar Usuário</div>
 
-                <form class="box__formulario gap">
+                <form id="editFormUser" class="box__formulario gap">
 
-                  <select class="text-5--modals form-selector" name="" id="setor">
-                    <option value="pt" selected>Selecionar modalidade de trabalho</option>
-                    <option value="presencial">Presencial</option>
-                    <option value="home-office">Home Office</option>
-                    <option value="hibrído">Hibrído</option>
-                  </select>
-
-                  <select class="text-5--modals form-selector" name="" id="setor">
-                    <option value="pt" selected>Selecionar nível profissional</option>
-                    <option value="júnior">Júnior</option>
-                    <option value="estágio">Estágio</option>
-                    <option value="sênior">Sênior</option>
+                  <select class="seletor box1--kind_of_work text-5--input" name="kind_of_work" id="kind_of_work">
+                  <option value="kind" selected>Tipo</option>
+                  <option value="home office">Home Office</option>
+                  <option value="presencial">Presencial</option>
+                  <option value="hibrido">Híbrido</option>
+                </select>
+  
+                    <select class="seletor box1--senha text-5--input" name="professional_level" id="professional_level">
+                    <option value="nivel" selected>Nível Profisional</option>
+                    <option id="estágio" value="estágio">Estágio</option>
+                    <option value="júnior">Junior</option>
+                    <option value="sênior">Senior</option>
                     <option value="pleno">Pleno</option>
                   </select>
 
@@ -373,9 +373,10 @@ export function criarUserModal() {
         </div>
       </div>
 `;
+  closeEditUser();
 }
 
-export function modalEditUser() {
+export async function modalEditUser() {
   const editUser = document.querySelector("#editUser");
   const btnAbrirModal = document.querySelector(".editUser");
 
@@ -397,7 +398,7 @@ export function closeEditUser() {
   });
 }
 
-// criarUserModal();
+editUserModal();
 // modalEditUser();
 
 //
@@ -417,7 +418,7 @@ export function delUserModal() {
           class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6 font--inter">
 
           <div id="closeDelUser" class="modal-close">
-          <img src="./img/close.svg" alt="">
+          <img src="../../pages/img/close.svg" alt="">
         </div>
 
           <div class="flex__delete__user">

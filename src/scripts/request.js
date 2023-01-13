@@ -192,6 +192,8 @@ export async function editUserAdmin(token, id, body) {
     body: JSON.stringify(body),
   });
 
+  const response = await responseJson.json();
+
   if (responseJson.ok) {
     toast("sucess", "Usuário Editado com Sucesso");
   } else {

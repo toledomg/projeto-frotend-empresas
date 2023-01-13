@@ -4,17 +4,20 @@ import {
   listDepartCompanies,
   getAllUsers,
   deleteUserAdmin,
+  editUserAdmin,
 } from "../../scripts/request.js";
 import { listAllCompanies } from "../../scripts/render.js";
 import { deleteDepart, btnDelDepart } from "../../scripts/deleteDepart.js";
 import { createDepart } from "../../scripts/createDepart.js";
-import { renderEditUser } from "./userAdmin.js";
+import { renderEditUser, editUser } from "./userAdmin.js";
 
 import {
   modalCreateDepart,
   createDepartModal,
   modalOpenDepart,
   openDepartModal,
+  editUserModal,
+  modalEditUser,
 } from "./../../scripts/modal.js";
 
 // variaveis globais
@@ -195,11 +198,14 @@ export async function renderAllUsers() {
     const id = e.uuid;
 
     imgEdit.classList.add("editUser");
-    imgEdit.id = "editUser";
+    imgEdit.id = "editarUser";
     imgEdit.src = "../../pages/img/edit_blue.svg";
     imgEdit.alt = "editar-user";
     imgEdit.addEventListener("click", async () => {
-      console.log(`Esse é o uuid: ${e.uuid}, do Usuário ${e.username}`);
+      // console.log(`Esse é o uuid: ${e.uuid}, do Usuário ${e.username}`);
+      document.getElementById("editUser").showModal();
+      editUser(id);
+      // renderEditUser();
     });
 
     imgDel.classList.add("delUser");
@@ -208,7 +214,9 @@ export async function renderAllUsers() {
     imgDel.alt = "deletar-user";
     imgDel.addEventListener("click", async () => {
       await deleteUserAdmin(token, id);
-      renderEditUser();
+
+      // const closeModal = document.getElementById("editUser");
+      // closeModal.closeModal();
     });
 
     divDados.append(h1, p, span);

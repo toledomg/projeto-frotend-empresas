@@ -1,3 +1,5 @@
+@import "./globalStyles.css";
+
 .button__1 {
   box-sizing: border-box;
 
@@ -49,6 +51,7 @@
   width: 142px;
   height: 41px;
 
+  color: var(--color-white100);
   background-color: var(--color-blue);
 }
 
