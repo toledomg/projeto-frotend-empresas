@@ -161,6 +161,7 @@ export async function createCarUser() {
 
 export async function renderAllUsers() {
   const boxUser = document.getElementById("user__container");
+  const dialogModal = document.getElementById("editUser");
 
   boxUser.innerHTML = "";
 
@@ -203,9 +204,8 @@ export async function renderAllUsers() {
     imgEdit.alt = "editar-user";
     imgEdit.addEventListener("click", async () => {
       // console.log(`Esse é o uuid: ${e.uuid}, do Usuário ${e.username}`);
-      document.getElementById("editUser").showModal();
+      dialogModal.showModal();
       editUser(id);
-      // renderEditUser();
     });
 
     imgDel.classList.add("delUser");
@@ -214,9 +214,7 @@ export async function renderAllUsers() {
     imgDel.alt = "deletar-user";
     imgDel.addEventListener("click", async () => {
       await deleteUserAdmin(token, id);
-
-      // const closeModal = document.getElementById("editUser");
-      // closeModal.closeModal();
+      renderEditUser();
     });
 
     divDados.append(h1, p, span);

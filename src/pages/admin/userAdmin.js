@@ -10,7 +10,6 @@ export async function editUser(userId) {
   const formEditUser = document.getElementById("editFormUser");
   const modal = document.getElementById("editUser");
   const id = userId;
-  // console.log(formEditUser);
 
   formEditUser.addEventListener("submit", async (dados) => {
     dados.preventDefault();
@@ -28,7 +27,6 @@ export async function editUser(userId) {
     await editUserAdmin(token, id, body);
     formEditUser.reset();
     modal.close();
-    // if(!false){}
     renderEditUser();
   });
 }
