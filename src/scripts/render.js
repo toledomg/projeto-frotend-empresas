@@ -4,7 +4,6 @@ import {
   getAllDepart,
   getAllUsers,
 } from "./request.js";
-import { renderCardsDepart } from "../pages/admin/admin.js";
 
 // variaveis globais
 const baseUrl = "http://localhost:6278";

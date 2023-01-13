@@ -6,8 +6,6 @@ import {
   renderSelect,
 } from "../../scripts/render.js";
 
-import { renderFooter } from "../../scripts/footer.js";
-
 renderFooter();
 showMenu();
 renderCardsHome(await listAllCompanies());
