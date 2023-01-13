@@ -1,5 +1,6 @@
 import { toast } from "./toast.js";
-// import { axiosInstance } from "./axios.js";
+// import { btnDelDepart } from "./render.js";
+
 const red = "#d65745";
 const green = "#55b938";
 const user = getUser() || {};
@@ -64,7 +65,7 @@ export async function createUser(data) {
 //  for Companies
 
 export async function getAllDepart(token) {
-  const responseJson = await fetch(baseUrl + `/departments`, {
+  const responseJson = await fetch(`${baseUrl}/departments`, {
     method: "GET",
     headers: requestHeaders,
   });
@@ -182,4 +183,33 @@ export async function deleteDepartAdmin(token, id) {
   }
 }
 
+// USers na home Admin
+
+export async function editUserAdmin(token, id, body) {
+  const responseJson = await fetch(`${baseUrl}/admin/update_user/${id}`, {
+    method: "PATCH",
+    headers: requestHeaders,
+    body: JSON.stringify(body),
+  });
+
+  if (responseJson.ok) {
+    toast("sucess", "Usuário Editado com Sucesso");
+  } else {
+    toast("error", "Algo deu Errado, Tente Novamente");
+  }
+  return response;
+}
+
+export async function deleteUserAdmin(token, id) {
+  const responseJson = await fetch(`${baseUrl}/admin/delete_user/${id}`, {
+    method: "DELETE",
+    headers: requestHeaders,
+  });
+
+  if (responseJson.ok) {
+    toast("sucess", "Usuário Deletado com Sucesso");
+  } else {
+    toast("error", "Algo deu Errado, Tente Novamente");
+  }
+}
 //

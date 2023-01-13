@@ -3,10 +3,12 @@ import {
   getAllDepart,
   listDepartCompanies,
   getAllUsers,
+  deleteUserAdmin,
 } from "../../scripts/request.js";
 import { listAllCompanies } from "../../scripts/render.js";
-import { deleteDepart } from "../../scripts/deleteDepart.js";
+import { deleteDepart, btnDelDepart } from "../../scripts/deleteDepart.js";
 import { createDepart } from "../../scripts/createDepart.js";
+import { renderEditUser } from "./userAdmin.js";
 
 import {
   modalCreateDepart,
@@ -81,8 +83,7 @@ export async function renderCardsDepart(departments) {
     btnApagar.classList.add("delDepart");
     btnApagar.addEventListener("click", async () => {
       await deleteDepart(e);
-      adminPage.innerHTML = "";
-      renderCardsDepart(departments); // parei aqui erro ao renderizar PAGE
+      await btnDelDepart();
     });
 
     divDados.append(h1Name, pDesc, spanEmpresa);
@@ -138,6 +139,7 @@ export async function createCarUser() {
 
   h1.classList.add("text-1");
   divBtn.classList.add("depart__info--edit");
+
   imgEdit.classList.add("editUser");
   imgDel.classList.add("delUser");
 
@@ -170,25 +172,49 @@ export async function renderAllUsers() {
     const departUser = Departments.filter(
       (element) => element.uuid == e.department_uuid
     );
-    // console.log(departUser);
+    const li = document.createElement("li");
 
-    boxUser.insertAdjacentHTML(
-      "afterbegin",
-      `
-      <li>
-      <div class="depart__info--desc">
-        <h1 class="text-1">${e.username}</h1>
-        <span>${e.professional_level || ""}</span>
-        <span>${e.kind_of_work || ""}</span>
-      </div>
-      <div class="depart__info--edit">
+    const divDados = document.createElement("div");
+    const h1 = document.createElement("h1");
+    const p = document.createElement("p");
+    const span = document.createElement("span");
 
-        <img class="editUser" src="../../pages/img/edit_blue.svg" alt="editar">
-        <img class="delUser" src="../../pages/img/lixeira.svg" alt="deletar">
-      </div>
-    </li>
-     `
-    );
+    divDados.classList.add("depart__info--desc");
+    h1.classList.add("text-1");
+
+    h1.innerText = e.username;
+    p.innerText = e.professional_level || "";
+    span.innerText = e.kind_of_work || "";
+
+    const divBtn = document.createElement("div");
+    const imgEdit = document.createElement("img");
+    const imgDel = document.createElement("img");
+
+    divBtn.classList.add("depart__info--edit");
+
+    const id = e.uuid;
+
+    imgEdit.classList.add("editUser");
+    imgEdit.id = "editUser";
+    imgEdit.src = "../../pages/img/edit_blue.svg";
+    imgEdit.alt = "editar-user";
+    imgEdit.addEventListener("click", async () => {
+      console.log(`Esse é o uuid: ${e.uuid}, do Usuário ${e.username}`);
+    });
+
+    imgDel.classList.add("delUser");
+    imgDel.id = "delUser";
+    imgDel.src = "../../pages/img/lixeira.svg";
+    imgDel.alt = "deletar-user";
+    imgDel.addEventListener("click", async () => {
+      await deleteUserAdmin(token, id);
+      renderEditUser();
+    });
+
+    divDados.append(h1, p, span);
+    divBtn.append(imgEdit, imgDel);
+    li.append(divDados, divBtn);
+    boxUser.appendChild(li);
   });
 }
 
@@ -210,4 +236,3 @@ createDepartModal();
 openDepartModal();
 
 createDepart();
-// deleteDepart();

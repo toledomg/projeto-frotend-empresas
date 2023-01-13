@@ -60,8 +60,8 @@ export async function createDepart() {
         renderCardsDepart(departments);
       }
     } else {
-      // toast("error", "Selecione uma Empresa");
-      toast("Selecione uma Empresa", red);
+      toast("error", "Selecione uma Empresa");
+      // toast("Selecione uma Empresa", red);
     }
   });
 }
