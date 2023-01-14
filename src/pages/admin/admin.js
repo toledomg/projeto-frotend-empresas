@@ -25,6 +25,9 @@ import {
   editDepartModal,
 } from "./../../scripts/modal.js";
 
+import { renderFooter } from "./../../scripts/footer.js";
+renderFooter();
+
 // variaveis globais
 // const baseUrl = "http://localhost:6278";
 const user = getUser() || {};
