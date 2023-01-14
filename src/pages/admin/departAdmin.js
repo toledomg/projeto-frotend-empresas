@@ -11,6 +11,7 @@ import {
   getAllUsers,
   hireUserDepart,
   dimissUserDepart,
+  getUseDesempregado,
 } from "../../scripts/request.js";
 
 import { renderCardsDepart } from "./admin.js";
@@ -177,5 +178,35 @@ export async function departPeople(depart) {
     divContainer.append(divClass, button);
     li.appendChild(divContainer);
     ulListUser.appendChild(li);
+  });
+  selectUserDepart(depart);
+}
+
+export async function selectUserDepart(depart) {
+  const ulListUser = document.getElementById("listUser");
+  const select = document.getElementById("departModalCreate");
+
+  const sections = await getUseDesempregado(token);
+
+  sections.forEach((e) => {
+    const option = document.createElement("option");
+    option.value = e.uuid;
+    option.innerText = e.username;
+
+    select.appendChild(option);
+  });
+
+  const btnContratar = document.getElementById("btnContratar");
+  btnContratar.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const body = { department_uuid: depart.uuid };
+
+    if (select.value != "") {
+      body["user_uuid"] = select.value;
+      console.log(body);
+      await hireUserDepart(token, body);
+      window.location.reload();
+    }
   });
 }

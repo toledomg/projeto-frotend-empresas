@@ -105,11 +105,11 @@ export function openDepartModal() {
 
               <div class="modal__info selector">
 
-              <select class="text-4" name="" id="departModalCreate">
+              <select class="text-4" name="selectUsers" id="departModalCreate">
               <option value="">Selecionar Usuário</option>
               </select>
 
-                <button class="btn--cadastro button__3 text-1 color-1">Contratar</button>
+                <button id="btnContratar" class="btn--cadastro button__3 text-1 color-1">Contratar</button>
               </div>
 
             </div>

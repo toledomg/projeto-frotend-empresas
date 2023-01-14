@@ -55,7 +55,6 @@ logout();
 export async function renderCardsDepart(departments) {
   const adminPage = document.getElementById("adminDepart");
   const dialogModal = document.getElementById("editDepart");
-
   adminPage.innerHTML = "";
 
   Array.from(departments).forEach((e) => {
@@ -281,6 +280,7 @@ createDepart();
 const departTextArea = async () => {
   const formEditDepart = document.getElementById("editFormDepart");
   const textArea = document.createElement("textarea");
+  textArea.classList.add("seletor", "box1--kind_of_work", "text-5--input");
   textArea.value = e.description;
   textArea.placeholder = "Descrição";
   textArea.name = "description";

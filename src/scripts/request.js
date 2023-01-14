@@ -218,8 +218,8 @@ export async function dimissUserDepart(token, id) {
   return response;
 }
 
-export async function hireUserDepart(body, token) {
-  const responseJson = await fetch(baseUrl + `/departments/hire`, {
+export async function hireUserDepart(token, body) {
+  const responseJson = await fetch(`${baseUrl}/departments/hire`, {
     method: "PATCH",
     headers: requestHeaders,
     body: JSON.stringify(body),
