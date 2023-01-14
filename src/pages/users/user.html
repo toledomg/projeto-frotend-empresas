@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../styles/modals.css">
-  <link rel="stylesheet" href="../styles/buttons.css">
-  <link rel="stylesheet" href="../styles/footer.css">
-  <link rel="stylesheet" href="../styles/user.css">
-  <!-- <link rel="stylesheet" href="../styles/cadastro.css"> -->
-  <link rel="stylesheet" href="../styles/login.css">
-  <link rel="stylesheet" href="../styles/index.css">
-  <link rel="stylesheet" href="../styles/media.css">
-  <link rel="stylesheet" href="../styles/globalStyles.css">
+  <link rel="stylesheet" href="../../styles/modals.css">
+  <link rel="stylesheet" href="../../styles/buttons.css">
+  <link rel="stylesheet" href="../../styles/footer.css">
+  <link rel="stylesheet" href="../../styles/user.css">
+  <!-- <link rel="stylesheet" href="../../styles/cadastro.css"> -->
+  <link rel="stylesheet" href="../../styles/login.css">
+  <link rel="stylesheet" href="../../styles/index.css">
+  <link rel="stylesheet" href="../../styles/media.css">
+  <link rel="stylesheet" href="../../styles/globalStyles.css">
   <!-- <link rel="stylesheet" href="./styles/reset.css"> -->
 
   <!-- CSS iCON Google -->
@@ -26,9 +26,9 @@
   <!-- Toastify -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
   <!-- Js -->
-  <script type="module" src="../scripts/index.js"></script>
-  <script type="module" src="../scripts/modalPerfil.js"></script>
-  <script type="module" src="../scripts/global.js"></script>
+  <script type="module" src="./user.js"></script>
+  <script type="module" src="../../scripts/modalPerfil.js"></script>
+  <script type="module" src="../../scripts/global.js"></script>
 
   <!-- JS - TailWind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -42,9 +42,9 @@
     <div>
       <div class="logo__container">
         <div class="logo">
-          <img src="../pages/img/ellipse1.svg" alt="">
+          <img src="../../pages/img/ellipse1.svg" alt="">
           <h1 class="title-1">
-            <a href="../../index.html">
+            <a href="../home/index.html">
               Kenzie Empresa</a>
           </h1>
         </div>
@@ -57,21 +57,7 @@
   </header>
   <hr>
   <main>
-    <section class="perfil__container">
-
-      <div>
-        <h1 class="text-1">USERNAME</h1>
-        <a>
-          <img id="editBtn" src="./img/edit_black.svg" alt="btn-edit">
-        </a>
-      </div>
-
-      <div>
-        <h2>Email: meuemail@mail.com</p>
-          <h2>Pleno</p>
-            <h2>Home Office</p>
-      </div>
-    </section>
+    <section id="userInfo" class="perfil__container"></section>
 
     <section class="contratado__container">
       <div>

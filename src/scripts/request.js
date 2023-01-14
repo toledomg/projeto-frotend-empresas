@@ -267,3 +267,16 @@ export async function deleteUserAdmin(token, id) {
   }
 }
 //
+
+//  users
+
+export async function getPerfilUser(token) {
+  const responseJson = await fetch(`${baseUrl}/users/profile`, {
+    method: "GET",
+    headers: requestHeaders,
+  });
+
+  const response = await responseJson.json();
+
+  return response;
+}

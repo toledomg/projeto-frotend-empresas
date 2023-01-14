@@ -13,7 +13,7 @@ function editPerfilModal() {
             class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6 font--inter">
 
             <div id="closeEditPerfil" class="modal-close">
-              <img src="./img/close.svg" alt="">
+              <img src="../../pages/img/close.svg" alt="">
             </div>
 
             <div class="title-1 text__align--R">Editar Perfil</div>
