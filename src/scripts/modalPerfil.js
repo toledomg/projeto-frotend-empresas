@@ -1,4 +1,4 @@
-function editPerfilModal() {
+export async function editPerfilModal() {
   const editPerfil = document.querySelector("#editPerfil");
 
   editPerfil.innerHTML = `
@@ -43,22 +43,23 @@ function editPerfilModal() {
     </div>
   </div>
  `;
+  closeEditPerfil();
 }
 
-function modalEditPerfil() {
-  const editPerfil = document.querySelector("#editPerfil");
-  const btnAbrirModal = document.querySelector("#editBtn");
+// export async function modalEditPerfil() {
+//   const editPerfil = document.querySelector("#editPerfil");
+//   const btnAbrirModal = document.querySelector("#editBtn");
 
-  btnAbrirModal.addEventListener("click", (e) => {
-    e.preventDefault();
+//   btnAbrirModal.addEventListener("click", (e) => {
+//     e.preventDefault();
 
-    editPerfil.showModal();
+//     editPerfil.showModal();
 
-    closeEditPerfil();
-  });
-}
+//     closeEditPerfil();
+//   });
+// }
 
-function closeEditPerfil() {
+export function closeEditPerfil() {
   const editPerfil = document.querySelector("#editPerfil");
   const btnCloseModal = document.querySelector("#closeEditPerfil");
 
@@ -67,5 +68,5 @@ function closeEditPerfil() {
   });
 }
 
-editPerfilModal();
-modalEditPerfil();
+// editPerfilModal();
+// modalEditPerfil();

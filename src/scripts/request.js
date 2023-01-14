@@ -280,3 +280,25 @@ export async function getPerfilUser(token) {
 
   return response;
 }
+
+export async function getCoWorkers(token) {
+  const responseJson = await fetch(`${baseUrl}/users/departments/coworkers`, {
+    method: "GET",
+    headers: requestHeaders,
+  });
+
+  const response = await responseJson.json();
+
+  return response;
+}
+
+export async function getDepartUser(token) {
+  const responseJson = await fetch(`${baseUrl}/users/departments`, {
+    method: "GET",
+    headers: requestHeaders,
+  });
+
+  const response = await responseJson.json();
+
+  return response;
+}
