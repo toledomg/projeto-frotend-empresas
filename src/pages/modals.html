@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../src/styles/buttons.css">
-  <link rel="stylesheet" href="../src/styles/modals.css">
-  <link rel="stylesheet" href="../src/styles/footer.css">
-  <link rel="stylesheet" href="../src/styles/login.css">
-  <link rel="stylesheet" href="../src/styles/index.css">
-  <link rel="stylesheet" href="../src/styles/media.css">
-  <link rel="stylesheet" href="../src/styles/globalStyles.css">
-  <!-- <link rel="stylesheet" href="../src/styles/reset.css"> -->
+  <link rel="stylesheet" href="../styles/buttons.css">
+  <link rel="stylesheet" href="../styles/modals.css">
+  <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="../styles/login.css">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/media.css">
+  <link rel="stylesheet" href="../styles/globalStyles.css">
+  <!-- <link rel="stylesheet" href="../styles/reset.css"> -->
 
   <!-- CSS iCON Google -->
   <link rel="stylesheet"
@@ -76,6 +76,52 @@
       </div>
     </div>
 
+  </dialog>
+
+  <dialog>
+    <div>
+      <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+
+            <div
+              class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6 font--inter">
+
+              <div id="closeEditDepart" class="modal-close">
+                <img src="../../pages/img/close.svg" alt="">
+              </div>
+
+              <div class="title-1 text__align--R">Editar Departamento</div>
+
+              <form id="editFormDepart" class="box__formulario gap">
+
+                <p>
+                  <input class="box1--input text-5--modals form-selector edit--desc" placeholder="descricao_empresa"
+                    id="description" type="textarea" required="true" name=description>
+                </p>
+
+                <textarea placeholder="Descrição
+                class=" box1--input text-5--modals form-selector edit--desc" id="description" type="textarea"
+                  required="true" name=description>
+                    Descrição
+              </textarea>
+
+                <textarea placeholder="Descrição
+                class=" box1--input text-5--modals form-selector edit--desc" id="description" type="textarea"
+                  required="true" name=description>
+
+              </textarea>
+
+                <button class="btn--cadastro button__5 text-1 color-1 size-100">Salvar Alterações</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </dialog>
 
 

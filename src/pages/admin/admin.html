@@ -28,7 +28,6 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <!-- Js internal -->
-  <script type="module" src="../../scripts/deleteDepart.js"></script>
   <script type="module" src="../../scripts/modal.js"></script>
   <script type="module" src="./admin.js"></script>
 
@@ -127,94 +126,7 @@
     <!-- Modals -->
     <dialog class="modal__Create-empresa"></dialog>
     <!-- Modal Departamentos -->
-    <dialog id="DepartOpen">
-      <div>
-        <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-
-          <div class="fixed inset-0 z-10 overflow-y-auto">
-            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-
-              <div
-                class="size__modal relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:p-6 font--inter">
-
-                <div id="closeModal" class="modal-close">
-                  <img src="../../pages/img/close.svg" alt="">
-                </div>
-
-                <div class="title-1 text__align--R nomeDepart">${department.description}</div>
-
-                <form class="box__formulario gap margin40">
-                  <div class="modal__Depart info">
-
-                    <div class="modal__info desc">
-                      <h1 class="text-3">${department.description}</h1>
-                      <span class="text-5">${department.companies.name}</span>
-                    </div>
-
-
-                    <div class="modal__info selector">
-
-                      <select class="text-4" name="" id="departModalCreate">
-                        <option value="">Selecionar Usuário</option>
-                      </select>
-
-                      <button class="btn--cadastro button__3 text-1 color-1">Contratar</button>
-                    </div>
-
-                  </div>
-                  <div class="modal__cards">
-                    <ul>
-
-                      <!-- Cards -->
-                      <li>
-                        <div>
-                          <div class="modal__cards--title">
-                            <h1 class="text-1">$Usuário</h1>
-                            <p>$nivel</p>
-                            <p>$empresa</p>
-                          </div>
-                          <button class="btn--cadastro button__4 text-1 color-4">Desligar</button>
-                        </div>
-                      </li>
-
-                      <!-- Cards -->
-                      <li>
-                        <div>
-                          <div class="modal__cards--title">
-                            <h1 class="text-1">$Usuário</h1>
-                            <p>$nivel</p>
-                            <p>$empresa</p>
-                          </div>
-                          <button class="btn--cadastro button__4 text-1 color-4">Desligar</button>
-                        </div>
-                      </li>
-
-                      <!-- Cards -->
-                      <li>
-                        <div>
-                          <div class="modal__cards--title">
-                            <h1 class="text-1">$Usuário</h1>
-                            <p>$nivel</p>
-                            <p>$empresa</p>
-                          </div>
-                          <button class="btn--cadastro button__4 text-1 color-4">Desligar</button>
-                        </div>
-                      </li>
-
-                    </ul>
-                  </div>
-              </div>
-
-            </div>
-            </form>
-
-          </div>
-        </div>
-      </div>
-      </div>
-      </div>
-    </dialog>
+    <dialog id="DepartOpen"></dialog>
     <dialog id="editDepart"></dialog>
     <dialog id="delDepart"> </dialog>
 

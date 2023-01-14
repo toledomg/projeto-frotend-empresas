@@ -78,7 +78,6 @@ export function closeCreateDepart() {
 
 export function openDepartModal() {
   const modalPage = document.querySelector("#DepartOpen");
-
   modalPage.innerHTML = `
   <div>
   <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -94,14 +93,14 @@ export function openDepartModal() {
             <img src="../../pages/img/close.svg" alt="">
           </div>
 
-          <div class="title-1 text__align--R">Nome do Departamento</div>
+          <div id="titulo" class="title-1 text__align--R"></div>
 
           <form class="box__formulario gap margin40">
             <div class="modal__Depart info">
 
               <div class="modal__info desc">
-                <h1 class="text-3">Descrição do departamento</h1>
-                <span class="text-5">Empresa pertencente</span>
+                <h1 id="description" class="text-3"></h1>
+                <span id="empresa" class="text-5"></span>
               </div>
 
               <div class="modal__info selector">
@@ -114,44 +113,8 @@ export function openDepartModal() {
               </div>
 
             </div>
-            <div class="modal__cards">
-              <ul>
-
-                <!-- Cards -->
-                <li>
-                  <div>
-                    <div class="modal__cards--title">
-                      <h1 class="text-1">$Usuário</h1>
-                      <p>$nivel</p>
-                      <p>$empresa</p>
-                    </div>
-                    <button class="btn--cadastro button__4 text-1 color-4">Desligar</button>
-                  </div>
-                </li>
-
-                <!-- Cards -->
-                <li>
-                  <div>
-                    <div class="modal__cards--title">
-                      <h1 class="text-1">$Usuário</h1>
-                      <p>$nivel</p>
-                      <p>$empresa</p>
-                    </div>
-                    <button class="btn--cadastro button__4 text-1 color-4">Desligar</button>
-                  </div>
-                </li>
-
-                <!-- Cards -->
-                <li>
-                  <div>
-                    <div class="modal__cards--title">
-                      <h1 class="text-1">$Usuário</h1>
-                      <p>$nivel</p>
-                      <p>$empresa</p>
-                    </div>
-                    <button class="btn--cadastro button__4 text-1 color-4">Desligar</button>
-                  </div>
-                </li>
+            <div  class="modal__cards">
+              <ul id="listUser">
 
               </ul>
             </div>
@@ -166,41 +129,24 @@ export function openDepartModal() {
 </div>
 </div>
 `;
-}
-
-export function modalOpenDepart() {
-  const openDepart = document.querySelector("#DepartOpen");
-  const btnAbrirModal = document.querySelector(".openDepart");
-
-  // console.log(openDepart);
-  // console.log(btnAbrirModal);
-
-  btnAbrirModal.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    openDepart.showModal();
-
-    closeOpenDepart();
-  });
+  closeOpenDepart();
 }
 
 export function closeOpenDepart() {
   const openDepart = document.querySelector("#DepartOpen");
   const btnCloseModal = document.querySelector("#closeOpenDepart");
-  console.log(openDepart);
 
   btnCloseModal.addEventListener("click", () => {
     openDepart.close();
   });
 }
 
-// modalOpenDepart();
-// openDepartModal();
+openDepartModal();
 
 //
 
 export function editDepartModal() {
-  const editDepart = document.querySelector("#editDepart");
+  const editDepart = document.getElementById("editDepart");
 
   editDepart.innerHTML = `
   <div>
@@ -219,14 +165,11 @@ export function editDepartModal() {
 
           <div class="title-1 text__align--R">Editar Departamento</div>
 
-          <form class="box__formulario gap">
+          <form id="editFormDepart" class="box__formulario gap">
 
-            <p>
-              <input class="box1--input text-5--modals form-selector edit--desc"
-                placeholder="descricao_empresa" id="desc" type="text" required="true" name=desc>
-            </p>
 
-            <button class="btn--cadastro button__2 text-1 color-1 size-100">Salvar Alterações</button>
+
+
           </form>
 
         </div>
@@ -235,19 +178,7 @@ export function editDepartModal() {
   </div>
 </div>
 `;
-}
-
-export function modalEditDepart() {
-  const editDepart = document.querySelector("#editDepart");
-  const btnAbrirModal = document.querySelector(".editDepart");
-
-  btnAbrirModal.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    editDepart.showModal();
-
-    closeEditDepart();
-  });
+  closeEditDepart();
 }
 
 export function closeEditDepart() {
@@ -259,8 +190,7 @@ export function closeEditDepart() {
   });
 }
 
-// modalEditDepart();
-// editDepartModal();
+editDepartModal();
 //
 
 export function delDepartModal() {

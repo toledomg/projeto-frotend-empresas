@@ -183,6 +183,58 @@ export async function deleteDepartAdmin(token, id) {
   }
 }
 
+export async function editDepartAdmin(token, id, body) {
+  const responseJson = await fetch(`${baseUrl}/departments/${id}`, {
+    method: "PATCH",
+    headers: requestHeaders,
+    body: JSON.stringify(body),
+  });
+
+  const response = await responseJson.json();
+
+  if (responseJson.ok) {
+    toast("sucess", "Departamento Editado com Sucesso");
+  } else {
+    toast("error", "Algo deu Errado, Tente Novamente");
+  }
+  return response;
+}
+
+/**/
+
+export async function dimissUserDepart(token, id) {
+  const responseJson = await fetch(baseUrl + `/departments/dismiss/${id}`, {
+    method: "PATCH",
+    headers: requestHeaders,
+  });
+
+  const response = await responseJson.json();
+
+  if (responseJson.ok) {
+    toast("sucess", "Usuário Desligado com Sucesso");
+  } else {
+    toast("error", "Algo deu Errado, Tente Novamente");
+  }
+  return response;
+}
+
+export async function hireUserDepart(body, token) {
+  const responseJson = await fetch(baseUrl + `/departments/hire`, {
+    method: "PATCH",
+    headers: requestHeaders,
+    body: JSON.stringify(body),
+  });
+
+  const response = await responseJson.json();
+
+  if (responseJson.ok) {
+    toast("sucess", "Usuário Contratado com Sucesso");
+  } else {
+    toast("error", "Algo deu Errado, Tente Novamente");
+  }
+  return response;
+}
+
 // USers na home Admin
 
 export async function editUserAdmin(token, id, body) {

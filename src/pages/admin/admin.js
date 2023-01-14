@@ -7,17 +7,22 @@ import {
   editUserAdmin,
 } from "../../scripts/request.js";
 import { listAllCompanies } from "../../scripts/render.js";
-import { deleteDepart, btnDelDepart } from "../../scripts/deleteDepart.js";
-import { createDepart } from "../../scripts/createDepart.js";
 import { renderEditUser, editUser } from "./userAdmin.js";
+import {
+  createDepart,
+  deleteDepart,
+  btnDelDepart,
+  editDepart,
+  departPeople,
+} from "./departAdmin.js";
 
 import {
   modalCreateDepart,
   createDepartModal,
-  modalOpenDepart,
   openDepartModal,
   editUserModal,
   modalEditUser,
+  editDepartModal,
 } from "./../../scripts/modal.js";
 
 // variaveis globais
@@ -49,6 +54,7 @@ logout();
 
 export async function renderCardsDepart(departments) {
   const adminPage = document.getElementById("adminDepart");
+  const dialogModal = document.getElementById("editDepart");
 
   adminPage.innerHTML = "";
 
@@ -69,10 +75,6 @@ export async function renderCardsDepart(departments) {
 
     const divBtn = document.createElement("div");
     const btnAbrir = document.createElement("img");
-    btnAbrir.addEventListener("click", () => {
-      modalOpenDepart();
-    });
-
     const btnEditar = document.createElement("img");
     const btnApagar = document.createElement("img");
 
@@ -81,8 +83,41 @@ export async function renderCardsDepart(departments) {
     btnApagar.src = "../../pages/img/lixeira.svg";
 
     divBtn.classList.add("depart__info--edit");
+
+    const id = e.uuid;
+    const depart = e;
+
     btnAbrir.classList.add("openDepart");
+    btnAbrir.addEventListener("click", async () => {
+      document.getElementById("DepartOpen").showModal();
+      await departPeople(depart);
+    });
+
     btnEditar.classList.add("editDepart");
+    btnEditar.addEventListener("click", async () => {
+      console.log(`Editar Depart`);
+      const formEditDepart = document.getElementById("editFormDepart");
+      const textArea = document.createElement("textarea");
+      textArea.value = e.description;
+      textArea.placeholder = "Descrição";
+      textArea.name = "description";
+      textArea.required = "true";
+
+      const btnSalvar = document.createElement("button");
+      btnSalvar.classList.add(
+        "btn--cadastro",
+        "button__5",
+        "text-1",
+        "color-1",
+        "size-100"
+      );
+      btnSalvar.innerText = "Salvar Alterações";
+
+      formEditDepart.append(textArea, btnSalvar);
+      dialogModal.showModal();
+      editDepart(id, textArea);
+    });
+
     btnApagar.classList.add("delDepart");
     btnApagar.addEventListener("click", async () => {
       await deleteDepart(e);
@@ -242,3 +277,24 @@ createDepartModal();
 openDepartModal();
 
 createDepart();
+
+const departTextArea = async () => {
+  const formEditDepart = document.getElementById("editFormDepart");
+  const textArea = document.createElement("textarea");
+  textArea.value = e.description;
+  textArea.placeholder = "Descrição";
+  textArea.name = "description";
+  textArea.required = "true";
+
+  const btnSalvar = document.createElement("button");
+  btnSalvar.classList.add(
+    "btn--cadastro",
+    "button__5",
+    "text-1",
+    "color-1",
+    "size-100"
+  );
+  btnSalvar.innerText = "Salvar Alterações";
+
+  formEditDepart.append(textArea, btnSalvar);
+};
