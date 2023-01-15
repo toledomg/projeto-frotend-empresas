@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../../styles/index.css">
   <link rel="stylesheet" href="../../styles/media.css">
   <link rel="stylesheet" href="../../styles/globalStyles.css">
+  <link rel="stylesheet" href="../../components/cute-alert-master/style.css" />
   <!-- <link rel="stylesheet" href="./styles/reset.css"> -->
 
   <!-- CSS iCON Google -->
@@ -25,13 +26,15 @@
 
   <!-- Toastify -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+
   <!-- Js -->
   <script type="module" src="./user.js"></script>
-  <script type="module" src="../../scripts/modalPerfil.js"></script>
-  <script type="module" src="../../scripts/global.js"></script>
+
+  <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 
   <!-- JS - TailWind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../components/cute-alert-master/cute-alert.js"></script>
 
   <!-- Projeto Início -->
   <title>M2-Usuário</title>
@@ -42,7 +45,7 @@
     <div>
       <div class="logo__container">
         <div class="logo">
-          <img src="../../pages/img/ellipse1.svg" alt="">
+          <img src="../img/ellipse1.svg" alt="">
           <h1 class="title-1">
             <a href="../home/index.html">
               Kenzie Empresa</a>
@@ -58,10 +61,18 @@
   <hr>
   <main>
     <section id="userInfo" class="perfil__container"></section>
+    <div>
+      <h1 hidden class="title-1">Você ainda não foi contratado</h1>
+    </div>
 
-    <section class="contratado__container">
-      <div>
-        <h1 class="title-1">Você ainda não foi contratado</h1>
+    <section class="contratado__container1">
+      <header id="headerEmpresa">
+
+      </header>
+      <div class="contratado__container--pessoas">
+        <ul id="userColegas">
+
+        </ul>
       </div>
     </section>
 

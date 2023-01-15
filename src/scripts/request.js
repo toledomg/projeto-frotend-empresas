@@ -1,4 +1,5 @@
-import { toast } from "./toast.js";
+import { toast, toasts } from "./toast.js";
+
 // import { btnDelDepart } from "./render.js";
 
 const red = "#d65745";
@@ -247,7 +248,7 @@ export async function editUserAdmin(token, id, body) {
   const response = await responseJson.json();
 
   if (responseJson.ok) {
-    toast("sucess", "Usuário Editado com Sucesso");
+    toast("sucess", "Usuário Admin Editado com Sucesso");
   } else {
     toast("error", "Algo deu Errado, Tente Novamente");
   }
@@ -278,5 +279,67 @@ export async function getPerfilUser(token) {
 
   const response = await responseJson.json();
 
+  return response;
+}
+
+export async function getCoWorkers(token) {
+  const responseJson = await fetch(`${baseUrl}/users/departments/coworkers`, {
+    method: "GET",
+    headers: requestHeaders,
+  });
+
+  const response = await responseJson.json();
+
+  return response;
+}
+
+export async function getDepartUser(token) {
+  const responseJson = await fetch(`${baseUrl}/users/departments`, {
+    method: "GET",
+    headers: requestHeaders,
+  });
+
+  const response = await responseJson.json();
+
+  return response;
+}
+
+export async function editUser(token, body) {
+  const responseJson = await fetch(`${baseUrl}/users`, {
+    method: "PATCH",
+    headers: requestHeaders,
+    body: JSON.stringify(body),
+  });
+
+  const response = await responseJson.json();
+
+  if (responseJson.ok) {
+    // toasts("sucess", "Usuário Editado com Sucesso");
+    cuteToast({
+      type: "success", // or 'info', 'error', 'warning'
+      title: "SUCESSO",
+      message: "Editado com Sucesso",
+      timer: 5000,
+    });
+  } else {
+    if (response.error.includes("email")) {
+      // toasts("error", "Email já cadastrado");
+      cuteToast({
+        type: "warning", // or 'info', 'error', 'warning'
+        title: "ATENÇÃO",
+        message: "Email já cadastrado, Tente novamente com outro Email",
+        timer: 5000,
+      });
+    } else {
+      // toasts("error", "Algo deu Errado, Tente Novamente");
+
+      cuteToast({
+        type: "error", // or 'info', 'error', 'warning'
+        title: "ERRO",
+        message: "Algo deu Errado, Tente Novamente",
+        timer: 5000,
+      });
+    }
+  }
   return response;
 }

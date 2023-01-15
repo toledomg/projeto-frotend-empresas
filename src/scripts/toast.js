@@ -35,3 +35,31 @@ export const toasts = (type, message) => {
     toast.remove();
   }, 4000);
 };
+
+// cuteAlert({
+//   type: "success",
+//   title: "Success Title",
+//   message: "Success Message",
+//   buttonText: "Ok",
+// });
+
+// cuteAlert({
+//   type: "error",
+//   title: "Error Title",
+//   message: "Error Message",
+//   buttonText: "Okay",
+// });
+// cuteAlert({
+//   type: "warning",
+//   title: "Warning Title",
+//   message: "Warning Message",
+//   buttonText: "Okay",
+// });
+// cuteAlert({
+//   type: "info",
+//   title: "Info Title",
+//   message: "Info Message",
+//   buttonText: "Okay",
+// }).then(() => {
+//   // do something
+// });
