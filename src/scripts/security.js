@@ -4,8 +4,6 @@ import { getUser, validateUser } from "./request.js";
 const user = getUser() || {};
 let { token } = user;
 
-console.log(token);
-
 export async function homeDirection() {
   if (!token) {
     window.open("../login.html", "_parent");

@@ -1,4 +1,5 @@
 import { toast, toasts } from "./toast.js";
+import { adminSecurity, userSecurity, homeDirection } from "./security.js";
 // import { usersPageUser } from "../pages/users/user.js";
 
 // import { btnDelDepart } from "./render.js";
@@ -48,7 +49,13 @@ export async function login(data) {
 
   const loginDataJson = await loginData.json();
   setLocalStorage("@kenzie:user", loginDataJson);
-  validateUser(token);
+  const validation = await validateUser(token);
+  console.log(`teste ${validation}`);
+  if (validation) {
+    window.open("../pages/admin.html", "_parent");
+  } else {
+    window.open("../pages/users/user.html", "_parent");
+  }
 
   return loginData;
 }
