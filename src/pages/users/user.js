@@ -1,4 +1,5 @@
 import { toasts } from "../../scripts/toast.js";
+
 import {
   getUser,
   getPerfilUser,
@@ -12,6 +13,7 @@ import { editPerfilModal } from "../../scripts/modalPerfil.js";
 
 import { renderFooter } from "../../scripts/footer.js";
 renderFooter();
+logout();
 // Var Globais
 const user = getUser() || {};
 let { token } = user;
@@ -147,6 +149,16 @@ export async function editUserDash() {
     }
   });
 }
+
+// Login / LogOut
+export function logout() {
+  const btnLogOut = document.getElementById("btnLogOut");
+  btnLogOut.addEventListener("click", () => {
+    localStorage.clear("@kenzie:user");
+    window.open("/", "_parent");
+  });
+}
+logout();
 
 usersPageUser();
 perfilPageUser(token);

@@ -33,7 +33,12 @@ export const listCompaniesBySectors = async (sector) => {
 
     return response;
   } catch (err) {
-    toast("error", "Erro no get do Setor empresas");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado ao listar os Setores da Empresa",
+      timer: 5000,
+    });
   }
 };
 
@@ -46,7 +51,12 @@ export const listAllCompanies = async () => {
 
     return response;
   } catch (err) {
-    toast("error", "Erro no get do ALL empresas");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado ao Listar Empresas",
+      timer: 5000,
+    });
   }
 };
 

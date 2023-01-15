@@ -46,10 +46,13 @@ const allDepart = await getAllDepart(token);
 // validDashAdmin();
 
 // Login / LogOut
+// Login / LogOut
+// Login / LogOut
 export function logout() {
   const btnLogOut = document.getElementById("btnLogOut");
   btnLogOut.addEventListener("click", () => {
     localStorage.clear("@kenzie:user");
+    window.open("/", "_parent");
   });
 }
 logout();

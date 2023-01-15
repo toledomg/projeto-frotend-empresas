@@ -35,7 +35,7 @@ export async function validateUser(token) {
   const response = await responseJson.json();
   console.log(response.is_admin);
   // return response.is_admin;
-  if (!response.is_admin) {
+  if (response.is_admin !== true) {
     window.open("./users/user.html", "_parent");
   } else {
     window.open("./admin/admin.html", "_parent");
