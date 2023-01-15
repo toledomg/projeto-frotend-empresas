@@ -48,13 +48,34 @@ export async function login(data) {
   });
 
   const loginDataJson = await loginData.json();
-  setLocalStorage("@kenzie:user", loginDataJson);
-  const validation = await validateUser(token);
-  console.log(`teste ${validation}`);
-  if (validation) {
-    window.open("../pages/admin.html", "_parent");
+
+  if (loginData.ok) {
+    cuteToast({
+      type: "success", // or 'info', 'error', 'warning'
+      title: "SUCESSO",
+      message: "Departamento Criado com Sucesso",
+      timer: 5000,
+    });
+
+    setLocalStorage("@kenzie:user", loginDataJson);
+    const validation = await validateUser(token);
+
+    if (validation) {
+      setTimeout(() => {
+        window.open("../pages/admin.html", "_parent");
+      }, 4000);
+    } else {
+      setTimeout(() => {
+        window.open("../pages/users/user.html", "_parent");
+      }, 4000);
+    }
   } else {
-    window.open("../pages/users/user.html", "_parent");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado, Tente Novamente",
+      timer: 5000,
+    });
   }
 
   return loginData;
