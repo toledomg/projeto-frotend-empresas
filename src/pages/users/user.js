@@ -1,4 +1,5 @@
 import { toasts } from "../../scripts/toast.js";
+import { homeDirection, userSecurity } from "../../scripts/security.js";
 
 import {
   getUser,
@@ -10,19 +11,16 @@ import {
 } from "../../scripts/request.js";
 
 import { editPerfilModal } from "../../scripts/modalPerfil.js";
-
 import { renderFooter } from "../../scripts/footer.js";
-renderFooter();
-logout();
+
 // Var Globais
 const user = getUser() || {};
 let { token } = user;
-
 //
+
 export async function perfilPageUser(token) {
   const info = document.getElementById("userInfo");
   const e = await getPerfilUser(token);
-  // console.log(e);
 
   info.insertAdjacentHTML(
     "beforeend",
@@ -60,7 +58,7 @@ ${e.kind_of_work || ""}
 
 export async function departName() {
   const Users = await getPerfilUser(token);
-  // console.log([Users]);
+
   const allDeparts = await getDepartUser(token);
   console.log(allDeparts.name);
 
@@ -73,13 +71,9 @@ export async function departName() {
 
   const departments = allDeparts.departments;
   const departsUser = departments.find((e) => e.uuid == Users.department_uuid);
-  console.log(departsUser.name);
-
-  // console.log(`Empresa uuid: => ${e.sectors.uuid}`);
-  // console.log(`User uuid: ===> ${Users.department_uuid}`);
 }
-// departName();
 
+// departName();
 export async function usersPageUser() {
   const boxUsers = document.querySelector(".contratado__container1");
   const Users = await getPerfilUser(token);
@@ -119,13 +113,11 @@ export async function usersPageUser() {
   `
     );
   });
-  // console.log(depart);
 }
 
 export async function editUserDash() {
   const section = document.getElementById("userInfo");
   const form = document.getElementById("editUserDash");
-  // console.log(form);
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -158,7 +150,11 @@ export function logout() {
     window.open("/", "_parent");
   });
 }
+
+renderFooter();
 logout();
+homeDirection();
+await userSecurity();
 
 usersPageUser();
 perfilPageUser(token);

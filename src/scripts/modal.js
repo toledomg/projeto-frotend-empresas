@@ -70,10 +70,6 @@ export function closeCreateDepart() {
     createDepart.close();
   });
 }
-
-// createDepartModal();
-// modalCreateDepart();
-
 //
 
 export function openDepartModal() {
@@ -249,12 +245,6 @@ export function closeDelDepartModal() {
   });
 }
 
-// delDepartModal();
-// modalDelDepart();
-
-//
-
-//
 //
 
 export function editUserModal() {
@@ -388,8 +378,3 @@ export function closeDelUser() {
     delUser.close();
   });
 }
-
-// delUserModal();
-// modalDelUser();
-
-//

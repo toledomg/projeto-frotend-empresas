@@ -34,7 +34,7 @@ export const listCompaniesBySectors = async (sector) => {
     return response;
   } catch (err) {
     cuteToast({
-      type: "error", // or 'info', 'error', 'warning'
+      type: "error",
       title: "ERRO",
       message: "Algo deu Errado ao listar os Setores da Empresa",
       timer: 5000,
@@ -52,7 +52,7 @@ export const listAllCompanies = async () => {
     return response;
   } catch (err) {
     cuteToast({
-      type: "error", // or 'info', 'error', 'warning'
+      type: "error",
       title: "ERRO",
       message: "Algo deu Errado ao Listar Empresas",
       timer: 5000,

@@ -46,19 +46,6 @@ export async function editPerfilModal() {
   closeEditPerfil();
 }
 
-// export async function modalEditPerfil() {
-//   const editPerfil = document.querySelector("#editPerfil");
-//   const btnAbrirModal = document.querySelector("#editBtn");
-
-//   btnAbrirModal.addEventListener("click", (e) => {
-//     e.preventDefault();
-
-//     editPerfil.showModal();
-
-//     closeEditPerfil();
-//   });
-// }
-
 export function closeEditPerfil() {
   const editPerfil = document.querySelector("#editPerfil");
   const btnCloseModal = document.querySelector("#closeEditPerfil");
@@ -67,6 +54,3 @@ export function closeEditPerfil() {
     editPerfil.close();
   });
 }
-
-// editPerfilModal();
-// modalEditPerfil();

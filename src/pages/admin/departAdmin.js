@@ -17,7 +17,6 @@ import {
 import { renderCardsDepart } from "./admin.js";
 
 // variaveis globais
-// const baseUrl = "http://localhost:6278";
 const user = getUser() || {};
 let { token } = user;
 const red = "#d65745";

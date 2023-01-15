@@ -17,6 +17,8 @@ import {
   departPeople,
 } from "./departAdmin.js";
 
+import { homeDirection, adminSecurity } from "../../scripts/security.js";
+
 import {
   modalCreateDepart,
   createDepartModal,
@@ -27,38 +29,23 @@ import {
 } from "./../../scripts/modal.js";
 
 import { renderFooter } from "./../../scripts/footer.js";
-renderFooter();
 
 // variaveis globais
-// const baseUrl = "http://localhost:6278";
 const user = getUser() || {};
 let { token } = user;
 const allDepart = await getAllDepart(token);
 //
 
-// Validação de Token e direcionamento
-
-// function validDashAdmin() {
-//   if (!token) {
-//     window.location.href = "/src/pages/login.html";
-//   }
-// }
-// validDashAdmin();
-
-// Login / LogOut
-// Login / LogOut
-// Login / LogOut
 export function logout() {
   const btnLogOut = document.getElementById("btnLogOut");
   btnLogOut.addEventListener("click", () => {
     localStorage.clear("@kenzie:user");
     window.open("/", "_parent");
+    localtion.reload();
   });
 }
-logout();
 
 // Depart
-
 export async function renderCardsDepart(departments) {
   const adminPage = document.getElementById("adminDepart");
   const dialogModal = document.getElementById("editDepart");
@@ -279,7 +266,6 @@ export async function mostrarModalDepartOpen(department) {
 renderAllUsers();
 modalCreateDepart();
 createDepartModal();
-// modalOpenDepart();
 openDepartModal();
 
 createDepart();
@@ -305,3 +291,10 @@ const departTextArea = async () => {
 
   formEditDepart.append(textArea, btnSalvar);
 };
+
+logout();
+
+homeDirection();
+await adminSecurity();
+
+renderFooter();
