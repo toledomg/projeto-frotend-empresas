@@ -21,7 +21,7 @@ export async function editPerfilModal() {
             <form id="editUserDash" class="box__formulario gap">
               <p>
                 <input class="box1--input text-5--modals form-selector" placeholder="Seu nome" id="name" type="text"
-                  required="true" name=name>
+                  required="true" name=username>
               </p>
 
               <p>

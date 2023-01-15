@@ -23,6 +23,7 @@ function loginForm() {
     });
 
     const request = await login(loginUser);
+
     // localStorage.setItem("@kenzie:user", JSON.stringify(request));
     // setLocalStorage("@kenzie:user", request);
   });
@@ -54,4 +55,3 @@ function createUserForm() {
 }
 
 loginForm();
-createUserForm();

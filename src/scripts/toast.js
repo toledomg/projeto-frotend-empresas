@@ -36,6 +36,13 @@ export const toasts = (type, message) => {
   }, 4000);
 };
 
+// cuteToast({
+//   type: "error", // or 'info', 'error', 'warning'
+//   title: "ERRO",
+//   message: "Algo deu Errado, Tente Novamente",
+//   timer: 5000,
+// });
+
 // cuteAlert({
 //   type: "success",
 //   title: "Success Title",
@@ -63,3 +70,22 @@ export const toasts = (type, message) => {
 // }).then(() => {
 //   // do something
 // });
+
+// cuteAlert({
+//   type: "question",
+//   title: "Confirm Title",
+//   message: "Confirm Message",
+//   confirmText: "Okay",
+//   cancelText: "Cancel"
+// }).then((e)=>{
+//   if ( e == ("Thanks")){
+// } else {
+//     alert(":-(");
+//   }
+// })
+
+// cuteToast({
+//   type: "success", // or 'info', 'error', 'warning'
+//   message: "Toast Message",
+//   timer: 5000
+// })

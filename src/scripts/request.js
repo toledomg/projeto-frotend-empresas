@@ -1,4 +1,5 @@
 import { toast, toasts } from "./toast.js";
+// import { usersPageUser } from "../pages/users/user.js";
 
 // import { btnDelDepart } from "./render.js";
 
@@ -33,7 +34,12 @@ export async function validateUser(token) {
   });
   const response = await responseJson.json();
   console.log(response.is_admin);
-  return response.is_admin;
+  // return response.is_admin;
+  if (!response.is_admin) {
+    window.open("./users/user.html", "_parent");
+  } else {
+    window.open("./admin/admin.html", "_parent");
+  }
 }
 
 //
@@ -47,6 +53,7 @@ export async function login(data) {
 
   const loginDataJson = await loginData.json();
   setLocalStorage("@kenzie:user", loginDataJson);
+  validateUser(token);
 
   return loginData;
 }
@@ -164,9 +171,19 @@ export async function createDepartAdmin(token, body) {
   const response = await responseJson.json();
 
   if (responseJson.ok) {
-    toast("sucess", "Departamento Criado com Sucesso");
+    cuteToast({
+      type: "success", // or 'info', 'error', 'warning'
+      title: "SUCESSO",
+      message: "Departamento Criado com Sucesso",
+      timer: 5000,
+    });
   } else {
-    toast("error", "Algo deu Errado, Tente Novamente");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado, Tente Novamente",
+      timer: 5000,
+    });
   }
   return response;
 }
@@ -178,9 +195,19 @@ export async function deleteDepartAdmin(token, id) {
   });
 
   if (responseJson.ok) {
-    toast("sucess", "Departamento Deletado com Sucesso");
+    cuteToast({
+      type: "success", // or 'info', 'error', 'warning'
+      title: "SUCESSO",
+      message: "Departamento Excluído com Sucesso",
+      timer: 5000,
+    });
   } else {
-    toast("error", "Algo deu Errado, Tente Novamente");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado, Tente Novamente",
+      timer: 5000,
+    });
   }
 }
 
@@ -194,9 +221,19 @@ export async function editDepartAdmin(token, id, body) {
   const response = await responseJson.json();
 
   if (responseJson.ok) {
-    toast("sucess", "Departamento Editado com Sucesso");
+    cuteToast({
+      type: "success", // or 'info', 'error', 'warning'
+      title: "SUCESSO",
+      message: "Departamento Editado com Sucesso",
+      timer: 5000,
+    });
   } else {
-    toast("error", "Algo deu Errado, Tente Novamente");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado, Tente Novamente",
+      timer: 5000,
+    });
   }
   return response;
 }
@@ -212,9 +249,19 @@ export async function dimissUserDepart(token, id) {
   const response = await responseJson.json();
 
   if (responseJson.ok) {
-    toast("sucess", "Usuário Desligado com Sucesso");
+    cuteToast({
+      type: "success", // or 'info', 'error', 'warning'
+      title: "SUCESSO",
+      message: "Usuário Desligado com Sucesso",
+      timer: 5000,
+    });
   } else {
-    toast("error", "Algo deu Errado, Tente Novamente");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado, Tente Novamente",
+      timer: 5000,
+    });
   }
   return response;
 }
@@ -229,9 +276,19 @@ export async function hireUserDepart(token, body) {
   const response = await responseJson.json();
 
   if (responseJson.ok) {
-    toast("sucess", "Usuário Contratado com Sucesso");
+    cuteToast({
+      type: "success", // or 'info', 'error', 'warning'
+      title: "SUCESSO",
+      message: "Usuário Desligado com Sucesso",
+      timer: 5000,
+    });
   } else {
-    toast("error", "Algo deu Errado, Tente Novamente");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado, Tente Novamente",
+      timer: 5000,
+    });
   }
   return response;
 }
@@ -248,9 +305,19 @@ export async function editUserAdmin(token, id, body) {
   const response = await responseJson.json();
 
   if (responseJson.ok) {
-    toast("sucess", "Usuário Admin Editado com Sucesso");
+    cuteToast({
+      type: "success", // or 'info', 'error', 'warning'
+      title: "SUCESSO",
+      message: "User Admin com Sucesso",
+      timer: 5000,
+    });
   } else {
-    toast("error", "Algo deu Errado, Tente Novamente");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado, Tente Novamente",
+      timer: 5000,
+    });
   }
   return response;
 }
@@ -262,9 +329,19 @@ export async function deleteUserAdmin(token, id) {
   });
 
   if (responseJson.ok) {
-    toast("sucess", "Usuário Deletado com Sucesso");
+    cuteToast({
+      type: "success", // or 'info', 'error', 'warning'
+      title: "SUCESSO",
+      message: "Usuário Excluído com Sucesso",
+      timer: 5000,
+    });
   } else {
-    toast("error", "Algo deu Errado, Tente Novamente");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado, Tente Novamente",
+      timer: 5000,
+    });
   }
 }
 //
@@ -314,16 +391,14 @@ export async function editUser(token, body) {
   const response = await responseJson.json();
 
   if (responseJson.ok) {
-    // toasts("sucess", "Usuário Editado com Sucesso");
     cuteToast({
       type: "success", // or 'info', 'error', 'warning'
       title: "SUCESSO",
-      message: "Editado com Sucesso",
+      message: "Usuário Editado com Sucesso",
       timer: 5000,
     });
   } else {
     if (response.error.includes("email")) {
-      // toasts("error", "Email já cadastrado");
       cuteToast({
         type: "warning", // or 'info', 'error', 'warning'
         title: "ATENÇÃO",
@@ -331,8 +406,6 @@ export async function editUser(token, body) {
         timer: 5000,
       });
     } else {
-      // toasts("error", "Algo deu Errado, Tente Novamente");
-
       cuteToast({
         type: "error", // or 'info', 'error', 'warning'
         title: "ERRO",

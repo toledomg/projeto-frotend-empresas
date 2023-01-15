@@ -5,6 +5,7 @@ import {
   getAllUsers,
   deleteUserAdmin,
   editUserAdmin,
+  validateUser,
 } from "../../scripts/request.js";
 import { listAllCompanies } from "../../scripts/render.js";
 import { renderEditUser, editUser } from "./userAdmin.js";
@@ -37,12 +38,12 @@ const allDepart = await getAllDepart(token);
 
 // Validação de Token e direcionamento
 
-function validDashAdmin() {
-  if (!token) {
-    window.location.href = "/src/pages/login.html";
-  }
-}
-validDashAdmin();
+// function validDashAdmin() {
+//   if (!token) {
+//     window.location.href = "/src/pages/login.html";
+//   }
+// }
+// validDashAdmin();
 
 // Login / LogOut
 export function logout() {

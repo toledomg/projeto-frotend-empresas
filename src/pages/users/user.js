@@ -138,9 +138,9 @@ export async function editUserDash() {
       }
     });
     if (cont > 0) {
+      console.log(body);
       await editUser(token, body);
       document.getElementById("editPerfil").remove();
-
       await perfilPageUser(token);
       section.innerHTML = "";
       perfilPageUser(token);
