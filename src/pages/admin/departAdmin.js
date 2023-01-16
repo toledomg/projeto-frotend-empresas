@@ -203,9 +203,11 @@ export async function selectUserDepart(depart) {
 
     if (select.value != "") {
       body["user_uuid"] = select.value;
-      console.log(body);
       await hireUserDepart(token, body);
-      window.location.reload();
+      document.getElementById("DepartOpen").close();
+      setTimeout(() => {
+        location.reload();
+      }, 5000);
     }
   });
 }
