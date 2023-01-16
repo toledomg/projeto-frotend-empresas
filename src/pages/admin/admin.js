@@ -26,6 +26,7 @@ import {
   editUserModal,
   modalEditUser,
   editDepartModal,
+  delDepartModal,
 } from "./../../scripts/modal.js";
 
 import { renderFooter } from "./../../scripts/footer.js";
@@ -111,10 +112,31 @@ export async function renderCardsDepart(departments) {
       editDepart(id, textArea);
     });
 
-    btnApagar.classList.add("delDepart");
+    btnApagar.classList.add("delelatarDepart");
     btnApagar.addEventListener("click", async () => {
-      await deleteDepart(e);
-      await btnDelDepart();
+      const textDelModal = document.getElementById("text-delModal");
+      textDelModal.insertAdjacentHTML(
+        "beforeend",
+        `
+      <h1 class="title-1 espacamento-40">
+      Realmente deseja deletar o Departamento ${e.name} e demitir seus funcionários?
+      </h1>
+      `
+      );
+      document.getElementById("delDepart").showModal();
+      const btnModal = document.getElementById("btnDeletedDepart");
+      btnModal.addEventListener("click", async () => {
+        document.getElementById("delDepart").close();
+        await deleteDepart(e);
+        await btnDelDepart();
+        cuteToast({
+          type: "success", // or 'info', 'error', 'warning'
+          title: "SUCESSO",
+          message: "Usuário Excluído com Sucesso",
+          timer: 50000,
+        });
+        // location.reload();
+      });
     });
 
     divDados.append(h1Name, pDesc, spanEmpresa);
@@ -237,12 +259,28 @@ export async function renderAllUsers() {
     });
 
     imgDel.classList.add("delUser");
-    imgDel.id = "delUser";
+    imgDel.id = "deleteUser";
     imgDel.src = "../../pages/img/lixeira.svg";
     imgDel.alt = "deletar-user";
     imgDel.addEventListener("click", async () => {
-      await deleteUserAdmin(token, id);
-      renderEditUser();
+      const textDelUserModal = document.getElementById("text-delUserModal");
+      textDelUserModal.insertAdjacentHTML(
+        "beforeend",
+        `
+        <h1 class="title-1 espacamento-40">
+        Realmente deseja remover o usuário ${e.username}?
+        </h1>
+      `
+      );
+
+      document.getElementById("delUser").showModal();
+      const btnDelUser = document.getElementById("delUser");
+      btnDelUser.addEventListener("click", async () => {
+        document.getElementById("delUser").close();
+        await deleteUserAdmin(token, id);
+        renderEditUser();
+        location.reload();
+      });
     });
 
     divDados.append(h1, p, span);

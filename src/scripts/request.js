@@ -81,18 +81,6 @@ export async function login(data) {
   return response;
 }
 
-// export async function createUser(data) {
-//   const userData = await fetch(`${baseUrl}/auth/register`, {
-//     method: "POST",
-//     headers: requestHeaders,
-//     body: JSON.stringify(data),
-//   })
-//     .then((res) => res.json())
-//     .catch((err) => console.log(err));
-
-//   return userData;
-// }
-
 export async function createUser(data) {
   const responseJson = await fetch(`${baseUrl}/auth/register`, {
     method: "POST",
@@ -180,7 +168,6 @@ export async function getAllUsers(token) {
   });
 
   const response = await responseJson.json();
-
   return response;
 }
 
@@ -192,7 +179,7 @@ export async function getUseDesempregado(token) {
   });
 
   const response = await responseJson.json();
-
+  set;
   return response;
 }
 
@@ -371,14 +358,14 @@ export async function editUserAdmin(token, id, body) {
     cuteToast({
       type: "success", // or 'info', 'error', 'warning'
       title: "SUCESSO",
-      message: "User Admin com Sucesso",
+      message: "Usuário Editado com Sucesso",
       timer: 5000,
     });
   } else {
     cuteToast({
       type: "error", // or 'info', 'error', 'warning'
       title: "ERRO",
-      message: "Algo deu Errado, Tente Novamente",
+      message: "Algo deu Errado, Selecione os dois campos por favor",
       timer: 5000,
     });
   }

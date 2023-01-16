@@ -35,7 +35,7 @@ export async function createDepartModal() {
               <option value="" selected>Selecionar Empresa</option>
             </select>
 
-            <button id='btnCriarDepart' class="btn--cadastro button__5 text-1 size-100" type="submit">Criar o
+            <button id='btnCriarDepart' class="btn--cadastro button__5 text-1 size-100">Criar o
               departamento</button>
 
               </form>
@@ -190,7 +190,7 @@ editDepartModal();
 //
 
 export function delDepartModal() {
-  const delDepart = document.querySelector("#delDepart");
+  const delDepart = document.getElementById("delDepart");
 
   delDepart.innerHTML = `
   <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -207,12 +207,11 @@ export function delDepartModal() {
         </div>
 
         <div class="flex__delete__user">
-          <p>
-          <h1 class="title-1 espacamento-40">Realmente deseja deletar o Departamento $name e demitir seus
-            funcionários?</h1>
+          <p id="text-delModal">
+
           </p>
 
-          <button class="btn--cadastro button__3 text-1 color-1 size-100">Deletar</button>
+          <button id="btnDeletedDepart" class="btn--cadastro button__3 text-1 color-1 size-100">Deletar</button>
 
         </div>
       </div>
@@ -221,19 +220,7 @@ export function delDepartModal() {
 </div>
 </div>
 `;
-}
-
-export function modalDelDepart() {
-  const delDepart = document.querySelector("#delDepart");
-  const btnAbrirModal = document.querySelector(".delDepart");
-
-  btnAbrirModal.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    delDepart.showModal();
-
-    closeDelDepartModal();
-  });
+  closeDelDepartModal();
 }
 
 export function closeDelDepartModal() {
@@ -245,6 +232,7 @@ export function closeDelDepartModal() {
   });
 }
 
+delDepartModal();
 //
 
 export function editUserModal() {
@@ -342,8 +330,7 @@ export function delUserModal() {
         </div>
 
           <div class="flex__delete__user">
-            <p>
-            <h1 class="title-1 espacamento-40">Realmente deseja remover o usuário $Nome?</h1>
+            <p id="text-delUserModal">
             </p>
 
             <button class="btn--cadastro button__3 text-1 color-1 size-100">Deletar</button>
@@ -355,19 +342,7 @@ export function delUserModal() {
   </div>
 </div>
 `;
-}
-
-export function modalDelUser() {
-  const editUser = document.querySelector("#delUser");
-  const btnAbrirModal = document.querySelector(".delUser");
-
-  btnAbrirModal.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    delUser.showModal();
-
-    closeDelUser();
-  });
+  closeDelUser();
 }
 
 export function closeDelUser() {
@@ -378,3 +353,5 @@ export function closeDelUser() {
     delUser.close();
   });
 }
+
+delUserModal();
