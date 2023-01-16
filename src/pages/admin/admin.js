@@ -81,13 +81,13 @@ export async function renderCardsDepart(departments) {
     const id = e.uuid;
     const depart = e;
 
-    btnAbrir.classList.add("openDepart");
+    btnAbrir.classList.add("openDepart", "cursor-pointer");
     btnAbrir.addEventListener("click", async () => {
       document.getElementById("DepartOpen").showModal();
       await departPeople(depart);
     });
 
-    btnEditar.classList.add("editDepart");
+    btnEditar.classList.add("editDepart", "cursor-pointer");
     btnEditar.addEventListener("click", async () => {
       console.log(`Editar Depart`);
       const formEditDepart = document.getElementById("editFormDepart");
@@ -112,7 +112,7 @@ export async function renderCardsDepart(departments) {
       editDepart(id, textArea);
     });
 
-    btnApagar.classList.add("delelatarDepart");
+    btnApagar.classList.add("delelatarDepart", "cursor-pointer");
     btnApagar.addEventListener("click", async () => {
       const textDelModal = document.getElementById("text-delModal");
       textDelModal.insertAdjacentHTML(
@@ -129,12 +129,6 @@ export async function renderCardsDepart(departments) {
         document.getElementById("delDepart").close();
         await deleteDepart(e);
         await btnDelDepart();
-        cuteToast({
-          type: "success", // or 'info', 'error', 'warning'
-          title: "SUCESSO",
-          message: "Usuário Excluído com Sucesso",
-          timer: 50000,
-        });
         // location.reload();
       });
     });
@@ -248,7 +242,7 @@ export async function renderAllUsers() {
 
     const id = e.uuid;
 
-    imgEdit.classList.add("editUser");
+    imgEdit.classList.add("editUser", "cursor-pointer");
     imgEdit.id = "editarUser";
     imgEdit.src = "../../pages/img/edit_blue.svg";
     imgEdit.alt = "editar-user";
@@ -258,7 +252,7 @@ export async function renderAllUsers() {
       editUser(id);
     });
 
-    imgDel.classList.add("delUser");
+    imgDel.classList.add("delUser", "cursor-pointer");
     imgDel.id = "deleteUser";
     imgDel.src = "../../pages/img/lixeira.svg";
     imgDel.alt = "deletar-user";

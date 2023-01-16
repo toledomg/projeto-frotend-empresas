@@ -32,6 +32,7 @@
   color: var(--color-white);
 
   background-color: var(--color-green);
+  outline: none;
 }
 
 .button__4 {
@@ -65,4 +66,8 @@
   border-radius: 255px;
 
   padding: 0 15px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
