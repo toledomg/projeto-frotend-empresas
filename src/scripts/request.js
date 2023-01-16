@@ -34,7 +34,7 @@ export async function validateUser(token) {
     headers: requestHeaders,
   });
   const response = await responseJson.json();
-  console.log(response.is_admin);
+  // console.log(response.is_admin);
   return response.is_admin;
 }
 
