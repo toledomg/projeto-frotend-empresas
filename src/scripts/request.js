@@ -15,6 +15,12 @@ const requestHeaders = {
 
 const baseUrl = "http://localhost:6278";
 
+export async function setTime(tempo) {
+  setTimeout(() => {
+    location.reload();
+  }, tempo);
+}
+
 // //  //
 // //  //
 export function setLocalStorage(key, value) {

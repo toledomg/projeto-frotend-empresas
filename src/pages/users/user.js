@@ -52,7 +52,19 @@ ${e.kind_of_work || ""}
     document.getElementById("editPerfil").showModal();
     editUserDash();
   });
-
+  if (e.error.includes("verify")) {
+    console.log("deu certo");
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message:
+        "Esse cadastro não existe mais, por favor, faça um novo cadastro",
+      timer: 5000,
+    });
+    setTimeout(() => {
+      window.open("../cadastro.html", "_parent");
+    }, 2000);
+  }
   return info;
 }
 

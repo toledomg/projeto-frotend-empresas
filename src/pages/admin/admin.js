@@ -273,7 +273,7 @@ export async function renderAllUsers() {
         document.getElementById("delUser").close();
         await deleteUserAdmin(token, id);
         renderEditUser();
-        location.reload();
+        setTime(2000);
       });
     });
 

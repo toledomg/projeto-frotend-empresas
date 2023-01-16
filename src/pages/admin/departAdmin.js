@@ -69,8 +69,12 @@ export async function createDepart() {
         renderCardsDepart(departments);
       }
     } else {
-      toast("error", "Selecione uma Empresa");
-      // toast("Selecione uma Empresa", red);
+      cuteToast({
+        type: "error", // or 'info', 'error', 'warning'
+        title: "ERRO",
+        message: "Selecione uma Empresa",
+        timer: 3000,
+      });
     }
   });
 }
@@ -98,11 +102,8 @@ export async function editDepart(userId, textArea) {
     adminPage.innerHTML = "";
 
     renderCardsDepart(department);
-
-    const modal = document.getElementById("editDepart");
-    modal.close();
+    document.getElementById("editDepart").close();
     formEditDepart.reset();
-    window.location.reload();
   });
 }
 
