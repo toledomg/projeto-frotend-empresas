@@ -138,6 +138,9 @@ export async function editUserDash() {
       await perfilPageUser(token);
       section.innerHTML = "";
       perfilPageUser(token);
+      setTimeout(() => {
+        location.reload();
+      }, 5000);
     }
   });
 }
