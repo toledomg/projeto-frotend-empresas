@@ -41,33 +41,85 @@ export async function validateUser(token) {
 //
 
 export async function login(data) {
-  const loginData = await fetch(`${baseUrl}/auth/login`, {
+  const responseJson = await fetch(`${baseUrl}/auth/login`, {
     method: "POST",
     headers: requestHeaders,
     body: JSON.stringify(data), //Corpo da Requisição, em formato JSON
   });
 
-  const loginDataJson = await loginData.json();
+  const response = await responseJson.json();
 
-  if (loginData.ok) {
+  if (responseJson.ok) {
     cuteToast({
       type: "success", // or 'info', 'error', 'warning'
       title: "SUCESSO",
-      message: "Departamento Criado com Sucesso",
-      timer: 5000,
+      message: "Usuário Logado com Sucesso",
+      timer: 3000,
     });
 
-    setLocalStorage("@kenzie:user", loginDataJson);
+    setLocalStorage("@kenzie:user", response);
     const validation = await validateUser(token);
 
     if (validation) {
       setTimeout(() => {
         window.open("../pages/admin.html", "_parent");
-      }, 4000);
+      }, 3000);
     } else {
       setTimeout(() => {
         window.open("../pages/users/user.html", "_parent");
-      }, 4000);
+      }, 3000);
+    }
+  } else {
+    cuteToast({
+      type: "error", // or 'info', 'error', 'warning'
+      title: "ERRO",
+      message: "Algo deu Errado, Tente Novamente",
+      timer: 3000,
+    });
+  }
+
+  return response;
+}
+
+// export async function createUser(data) {
+//   const userData = await fetch(`${baseUrl}/auth/register`, {
+//     method: "POST",
+//     headers: requestHeaders,
+//     body: JSON.stringify(data),
+//   })
+//     .then((res) => res.json())
+//     .catch((err) => console.log(err));
+
+//   return userData;
+// }
+
+export async function createUser(data) {
+  const responseJson = await fetch(`${baseUrl}/auth/register`, {
+    method: "POST",
+    headers: requestHeaders,
+    body: JSON.stringify(data),
+  });
+  const response = await responseJson.json();
+
+  if (responseJson.ok) {
+    cuteToast({
+      type: "success", // or 'info', 'error', 'warning'
+      title: "SUCESSO",
+      message: "Login Criado com Sucesso",
+      timer: 3000,
+    });
+
+    setLocalStorage("@kenzie:user", response);
+    const validation = await validateUser(token);
+
+    if (validation) {
+      setTimeout(() => {
+        window.open("../pages/admin.html", "_parent");
+      }, 3000);
+    } else {
+      setTimeout(() => {
+        window.open("../pages/users/user.html", "_parent");
+      }, 3000);
     }
   } else {
     cuteToast({
@@ -78,19 +130,7 @@ export async function login(data) {
     });
   }
 
-  return loginData;
-}
-
-export async function createUser(data) {
-  const userData = await fetch(`${baseUrl}/auth/register`, {
-    method: "POST",
-    headers: requestHeaders,
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
-
-  return userData;
+  return response;
 }
 
 //  for Companies
