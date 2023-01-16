@@ -93,7 +93,7 @@ export async function createUser(data) {
     cuteToast({
       type: "success", // or 'info', 'error', 'warning'
       title: "SUCESSO",
-      message: "Login Criado com Sucesso",
+      message: "Cadastro Criado com Sucesso",
       timer: 3000,
     });
 
@@ -179,7 +179,7 @@ export async function getUseDesempregado(token) {
   });
 
   const response = await responseJson.json();
-  set;
+
   return response;
 }
 
